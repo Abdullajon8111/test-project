@@ -93,6 +93,7 @@
     </main>
 </div>
 
+@include('partials.alerts')
 @stack('javascript')
 </body>
 </html>

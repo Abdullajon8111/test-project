@@ -12,7 +12,7 @@
                             </div>
                         @endif
 
-                        {{ __('You are logged in!') }}
+                        {{ \Illuminate\Foundation\Inspiring::quote() }}
                     </div>
                 </div>
             </div>

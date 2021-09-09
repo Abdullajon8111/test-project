@@ -1,0 +1,30 @@
+@php
+    /** @var \App\Models\Category $category */
+@endphp
+
+@extends('layouts.app')
+
+@section('content')
+    <div class="card">
+        <div class="card-header">{{ __('Category edit') }}</div>
+        <div class="card-body">
+            <form action="{{ route('category.update', ['category' => $category->id]) }}" method="post">
+                @csrf
+                @method('put')
+                <div class="form-group">
+                    <label>{{ __('Name') }}</label>
+                    <input type="text" name="name" class="form-control @error('name') is-invalid @enderror"
+                           value="{{ $category->name }}">
+                    <span class="text-danger">@error('name') {{ $errors->first('name') }} @enderror</span>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success">
+                        <i class="fa fa-save">&ensp;</i>
+                        {{ __('Save') }}
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+@endsection
