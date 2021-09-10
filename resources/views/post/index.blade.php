@@ -63,7 +63,7 @@
                         <td>{{ $loop->iteration + (request()->query('page', 1) - 1) * 10 }}</td>
                         <td>{{ $post->title }}</td>
                         <td>{{ Str::limit($post->description, 15) }}</td>
-                        <td>{{ $post->category->name }}</td>
+                        <td>{{ $post->category->name ?? '' }}</td>
                         <td>
                             <a href="{{ route('post.edit', ['post' => $post->id]) }}" class="btn btn-primary btn-sm float-left">
                                 <i class="fa fa-edit">&ensp;</i>
